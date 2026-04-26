@@ -1,0 +1,35 @@
+common:
+  master_slc: C:/data/insar/master.slc
+  slave_slc: C:/data/insar/slave.slc
+  reference_dem: C:/data/insar/reference_dem.tif
+  output_dir: C:/data/insar/envi_outputs
+  range_looks: 1
+  azimuth_looks: 1
+  coherence_threshold: 0.2
+  pixel_size: 10.0
+
+steps:
+  baseline:
+    orbit_file: null
+  coregistration:
+    dem: C:/data/insar/reference_dem.tif
+  interferogram:
+    remove_flat_earth: true
+  coherence:
+    window_size: 5
+  filter:
+    goldstein_alpha: 0.5
+    window_size: 5
+  unwrap:
+    grid_size: 64
+  gcp:
+    dem: C:/data/insar/reference_dem.tif
+  refine:
+    polynomial_degree: 2
+  phase_to_height:
+    dem: C:/data/insar/reference_dem.tif
+  geocode:
+    dem: C:/data/insar/reference_dem.tif
+    resampling: bilinear
+  mosaic:
+    input_dems: []

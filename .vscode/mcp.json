@@ -1,0 +1,14 @@
+{
+  "servers": {
+    "envi-sarscape": {
+      "type": "stdio",
+      "command": "${workspaceFolder}\\.venv312\\Scripts\\python.exe",
+      "args": ["-m", "envi_mcp.server"],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src",
+        "PYTHONUTF8": "1"
+      }
+    }
+  }
+}
